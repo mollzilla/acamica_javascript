@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+  <div class="jumbotron">
+  <h1>practico javascript</h1>
+  </div>
+
+  <div class="form-group col-6 offset-3">
+    <form class="form" action="">
+      <label for="input1" id="label1">Input 1</label>
+      <input type="text" class="form-control" name="" id="input1">
+      <label for="input2" id="label2">Input 2</label>
+      <input type="text" name="" class="form-control" id="input2">
+
+    </form>
+
+    <button onclick="funcion()" class="my-3 btn btn-info">Dale gas!</button>
+
+    <h4 class="resultado"></h4>
+  </div>
+  
+  <script>
+      
+    /* Nombre y apellido */
+    // let nombre=prompt("Ingresá tu nombre");
+    // let apellido=prompt("Ingresá tu apellido");
+
+    // alert(`Bienvenido ${nombre} ${apellido}`);
+
+    /* Suma */
+
+      document.querySelector("#label1").innerHTML="Ingrese número 1";
+      document.querySelector("#label2").innerHTML="Ingrese número 2";
+
+    function funcion() {
+
+      let resultado="";
+
+      let nro1=(+document.querySelector("#input1").value);
+      let nro2=(+document.querySelector("#input2").value);
+
+      console.log(nro1);
+      console.log(nro2);
+
+      if(isNaN(nro1) || isNaN(nro2))
+        resultado="Por favor ingresa números válidos";
+      else
+        resultado=nro1+nro2;
+
+      document.querySelector(".resultado").innerHTML=resultado;
+    }
+
+    /* Llega? */
+
+      // document.querySelector("#label1").innerHTML="Ingrese Kilómetros a recorrer";
+      // document.querySelector("#label2").innerHTML="";
+      // document.querySelector("#input2").style="display: none"
+
+      // function funcion() {
+
+      //   let resultado="";
+      //   let tanque=50;
+      //   let capacidad=15;
+
+        
+      //   document.querySelector(".resultado").innerHTML=resultado;
+
+      //   let kilometros=(+document.querySelector("#input1").value);
+
+      //   console.log(kilometros);
+
+      //   if(isNaN(kilometros) || kilometros<0)
+      //     resultado="Por favor ingresa números válidos";
+      //   else
+      //     if(kilometros > tanque*capacidad) {
+      //       resultado="Combustible insuficiente para el viaje";
+      //     }
+      //     else {
+      //       resultado="Llegará con seguridad a destino";
+      //     }
+
+      //   document.querySelector(".resultado").innerHTML=resultado;
+      // }
+
+
+      /* Cuantos tanques de nafta? */
+
+      // document.querySelector("#label1").innerHTML="Ingrese modelo de motor(1 para 1.6, 2 para 1.8 o 3 para 2.0)";
+      // document.querySelector("#label2").innerHTML="Ingrese Kilómetros a recorrer";
+
+      // function funcion() {
+
+      //   let resultado="Llegará con seguridad a destino";
+      //   let tanque=45;
+
+      //   let motor=parseInt(document.querySelector("#input1").value);
+      //   let kilometros=parseInt(document.querySelector("#input2").value);
+
+      //   console.log(motor);
+      //   console.log(kilometros);
+
+      //   if(isNaN(kilometros) || isNaN(motor) || (motor<1||motor>3))
+      //     resultado="Por favor ingresa números válidos";
+      //   else {
+      //     switch (motor) {
+      //       case 1:
+      //         if(kilometros > tanque*15)
+      //           resultado="Combustible insuficiente para el viaje";
+      //         break;
+      //       case 2:
+      //         if(kilometros > tanque*12)
+      //           resultado="Combustible insuficiente para el viaje";
+      //         break;
+      //       case 3:
+      //         if(kilometros > tanque*10)
+      //           resultado="Combustible insuficiente para el viaje";
+      //         break;
+      //       default:
+      //         break;
+      //       }
+      //     }
+
+      //   document.querySelector(".resultado").innerHTML=resultado;
+      // }
+
+      /* Dial de radio */
+
+      // document.querySelector("#label1").innerHTML="Ingrese el dial";
+      // document.querySelector("#label2").innerHTML="";
+      // document.querySelector("#input2").style="display: none"
+
+      // function funcion() {
+
+      //   let resultado="Bienvenido a su radio favorita";
+
+      //   let dialIngresado=+document.querySelector("#input1").value;
+
+      //   console.log(dialIngresado);
+      
+      //   if(isNaN(dialIngresado))
+      //     resultado="Por favor ingresa números válidos";
+      //   else {
+      //     if(dialIngresado>107.9)
+      //       resultado="Dial demasiado alto";
+      //     else if(dialIngresado<89.9)
+      //       resultado="Dial demasiado bajo"
+      //     }
+        
+      //   document.querySelector(".resultado").innerHTML=resultado;
+      //   }
+    
+
+        /* Transferencia Bancaria */
+
+      document.querySelector("#label1").innerHTML="Ingrese monto a transferir";
+      document.querySelector("#label2").innerHTML="Ingrese destinatario";
+
+      let destinatarios="roberto"
+
+      function funcion() {
+
+        let resultado="Transacción exitosa";
+        let saldo=500;
+
+        let monto=+document.querySelector("#input1").value;
+        let destinatario=(document.querySelector("#input2").value).toLowerCase();
+
+        console.log(destinatario);
+        console.log(monto);
+      
+        if(isNaN(monto))
+          resultado="Por favor ingresa números válidos";
+        else {
+          if(monto>saldo)
+            resultado="Fondos Insuficientes";
+          if(destinatario != "roberto")
+            resultado="Destinatario Inválido";
+          }
+        
+        document.querySelector(".resultado").innerHTML=resultado;
+        }
+
+      /* Challenge 10/8 */
+
+      let i=1;
+      while(i<=10) {
+        console.log(`${i} Elefante${i>1? "s" : ""} se balanceaba${i>1? "n" : ""}.... ◖ᵔᴥᵔ◗ ♪ ♫`);
+        i++;
+      }
+
+      console.log("\n La tabla del 18")
+      for (let i = 0; i < 10; i++) {
+        console.log(18*i);
+      }
+
+      /* Challenge 12/8 */
+
+      // document.querySelector("#label1").innerHTML="Ingrese fruta";
+      // document.querySelector("#label2").innerHTML="";
+      // document.querySelector("#input2").style="display: none"
+
+      // let frutas=[];
+
+      // function funcion() {
+
+      //   frutas.push(document.querySelector("#input1").value);
+      
+      //   document.querySelector(".resultado").innerHTML="Usted ha seleccionado las siguientes frutas";
+
+      //   console.clear();
+
+      //   console.log("Este es el array entero: \n")
+      //   console.log(frutas);
+
+      //   console.log("Esta es cada fruta mostrada con un while: \n")
+      //   i=0;
+      //   while(i<frutas.length) {
+      //     console.log(frutas[i]);
+      //     i++;
+      //   }
+      // }
+
+  </script>
+</body>
+</html>

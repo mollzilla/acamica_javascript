@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h2 class="resultado"></h2>
+  <h2 class="promedio"></h2>
+
+  <script>
+    function sumemos() {
+      let suma=0;
+      let numero=0;
+      for (var i = 0; i < 5; i++) {
+        numero=(+prompt("Ingresá el número"));
+        if (isNaN(numero)) {
+          alert("Numero invalido");
+          i--;
+        } else {
+          suma=suma+numero;
+        }
+      }
+      document.querySelector(".resultado").innerHTML=suma;
+      document.querySelector(".promedio").innerHTML=(suma/(i));
+      console.log(suma/(i));
+    }
+
+    // sumemos();
+
+    /* Edades */ 
+
+    function edades() {
+      let n=1;
+
+      while (n!==0) {
+        console.log(n);
+        document.querySelector(".resultado").innerHTML="no esta vacia";
+        prompt
+      }
+    }
+    edades();
+
+  </script>
+</body>
+</html>
