@@ -200,6 +200,10 @@ animalitos.push(puccini, mora)
 // console.log(animalitos);
 
 
+function getDogsAdoptionState(dogs, adoptionState) {
+    return (dogs.filter(dog => dog.adoptionState==adoptionState)).map(dog => dog.name);
+  }
+  
 
 let report = {
   allDogs: animalitos.map(animalito => animalito.name),
@@ -207,10 +211,6 @@ let report = {
   inProcess: getDogsAdoptionState(animalitos, "Proceso de adopción en curso"),
   adopted: getDogsAdoptionState(animalitos, "Adoptado!"),
 
-  getDogsAdoptionState(dogs, adoptionState) {
-    return (dogs.filter(dog => dog.adoptionState==adoptionState)).map(dog => dog.name);
-  },
-  
   produceReport() {
     console.log(".oOo.oOo.oOo.oOo.oOo.oOo.oOo.REPORTE.oOo.oOo.oOo.oOo.oOo.oOo.oOo.")
     console.log("Este es el total de animalitos en seguimiento por la perrera en este momento:\n");
